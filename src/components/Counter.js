@@ -1,34 +1,12 @@
 import React, { useState } from "react";
 
 export default function Counter({ initialCount }) {
-  const [number, setCount] = useState({ count: initialCount });
+  const [count, setCount] = useState(initialCount);
   return (
     <div>
-      <button
-        onClick={() =>
-          setCount((prevNumber) => {
-            return;
-            {
-              count: prevNumber.count - 1;
-            }
-          })
-        }
-      >
-        -
-      </button>
-      <span>{number.count}</span>
-      <button
-        onClick={() =>
-          setCount((prevNumber) => {
-            return;
-            {
-              count: prevNumber.count + 1;
-            }
-          })
-        }
-      >
-        +
-      </button>
+      <button onClick={() => setCount((prevCount) => prevCount - 1)}>-</button>
+      <span>{count}</span>
+      <button onClick={() => setCount((prevCount) => prevCount + 1)}>+</button>
     </div>
   );
 }
